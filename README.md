@@ -1,88 +1,69 @@
-React Design Patterns – Practice Repository
+# React Design Patterns – Practice Repository
 
-This repository contains my hands-on practice of React design patterns.
+This repository contains my hands-on practice of **React design patterns**.
 
-The goal of this repo is simple:
+The goal of this repository is to understand design patterns by **building them**, not just reading about them.  
+Each pattern is implemented in a clean and simple way so others can easily refer to it and take inspiration.
 
-To understand design patterns by actually building them
+---
 
-To keep examples clean, readable, and maintainable
+## Why this repository exists
 
-To help others learn from real code, not theory
-
-Each pattern is implemented in isolation so it can be easily understood and reused.
-
-Why this repository exists
-
-Most developers know design patterns by name, but struggle to apply them correctly.
+Many developers know design patterns by name but struggle to apply them correctly in real projects.
 
 This repository is created to:
+- Practice React design patterns with real code
+- Understand when and why a pattern should be used
+- Keep code readable and maintainable
+- Avoid unnecessary abstractions and over-engineering
 
-Practice patterns with real components
+This is not a tutorial repository.  
+This is a **learning-in-public and reference repository**.
 
-Understand when and why a pattern is used
+---
 
-Avoid over-engineering
+## Repository structure
 
-Build a long-term, maintainable mindset as a frontend developer
+- Each design pattern lives in its own folder
+- Each pattern focuses on:
+  - Clear responsibilities
+  - Simple and readable code
+  - Practical, real-world use cases
+- No unnecessary complexity
+- Patterns are added only after proper hands-on practice
 
-This is not a tutorial repo.
-This is a learning-in-public and reference repo.
+---
 
-How this repository is structured
+## Current progress
 
-Each design pattern lives in its own folder
+- **Container–Presenter Pattern (Smart–Dumb Components)**  
+  Separates business logic from UI rendering to keep components clean and easy to maintain.
 
-Every pattern focuses on:
+---
 
-Clear responsibility
+## Future updates
 
-Simple code
+This repository will be continuously updated as I practice more React patterns, such as:
+- Compound Components
+- Custom Hooks patterns
+- Render Props
+- State colocation
+- Controlled vs uncontrolled components
+- Feature-based architecture
+- Other real-world React patterns
 
-Practical use cases
+Patterns will be added gradually, based on understanding and real usage.
 
-Minimal abstractions
+---
 
-No unnecessary complexity
+## Final note
 
-Current progress
-
-Container–Presenter (Smart–Dumb Components)
-
-This pattern focuses on separating business logic from UI rendering to keep components clean and readable.
-
-Future updates
-
-This repository will be continuously updated as I practice more patterns, such as:
-
-Compound Components
-
-Custom Hooks patterns
-
-Render Props
-
-State Colocation
-
-Controlled vs Uncontrolled Components
-
-Feature-based architecture
-
-Other real-world React patterns
-
-Each pattern will be added only after proper hands-on practice.
-
-Final note
-
-This repo is meant to grow slowly and intentionally.
+This repository is meant to grow slowly and intentionally.
 
 The focus is not on quantity, but on:
+- Clarity
+- Maintainability
+- Real-world understanding
+- Writing code that can be easily understood by others
 
-Understanding
-
-Clarity
-
-Maintainability
-
-Real-world usage
-
-Anyone is free to refer to this repo and take inspiration from it.
+Anyone is free to refer to this repository and take inspiration from it.
