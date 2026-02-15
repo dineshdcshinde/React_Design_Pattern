@@ -1,4 +1,4 @@
-# React Design Patterns – Practice Repository
+# React Design Patterns – Practice Repository (Typescript)
 
 This repository contains my hands-on practice of **React design patterns**.
 
