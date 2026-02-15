@@ -1,73 +1,78 @@
-# React + TypeScript + Vite
+# Container Presenter Pattern (React + TypeScript)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project demonstrates the **Container/Presenter pattern** using a small user dashboard.
 
-Currently, two official plugins are available:
+## What this pattern means
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Container (`UserContainer`)** handles logic and data.
+- **Presenter (`UserPresenter`)** handles UI rendering only.
 
-## React Compiler
+The goal is to keep business logic separate from visual components so code is easier to read, test, and maintain.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Project flow
 
-## Expanding the ESLint configuration
+1. `UserContainer` fetches users from `https://jsonplaceholder.typicode.com/users`.
+2. It manages state like `users`, `search`, `selectedUser`, `loading`, and `error`.
+3. It filters users based on search input.
+4. It passes prepared data and handlers as props to `UserPresenter`.
+5. `UserPresenter` renders the list, search box, and selected user details.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Folder structure
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```text
+src/
+  components/
+    UserContainer.tsx   # data + state + handlers
+    UserPresenter.tsx   # pure UI from props
+  types/
+    types.ts            # shared User type
+  App.tsx               # lazy-loads UserContainer
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Why this pattern is useful
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- Better separation of concerns
+- Easier UI reuse
+- Cleaner testing strategy
+- Simpler future refactoring
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Run locally
+
+```bash
+npm install
+npm run start
 ```
+
+Then open the local Vite URL shown in the terminal.
+
+## Notes
+
+- Data source: JSONPlaceholder (mock API)
+- `React.lazy` + `Suspense` is used for component-level lazy loading
+
+## Pros and Cons
+
+### Pros
+
+- Clear separation of concerns
+- Easier to read and maintain
+- Easier to refactor later
+- Presenter components are easy to test
+
+### Cons
+
+- Adds extra files and structure
+- Can lead to prop drilling if overused
+- Not ideal for very small components
+
+## When to use this pattern
+
+- When UI and business logic are both growing
+- When multiple UIs may reuse the same logic
+- When you want cleaner component testing and maintenance
+
+## When not to use this pattern
+
+- For tiny, single-purpose components
+- For quick prototypes where added structure slows you down
+- When logic and UI are too simple to justify separation
