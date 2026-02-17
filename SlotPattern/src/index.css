@@ -1,0 +1,272 @@
+.card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  max-width: 100%;
+  border: 1px solid #eaeef2;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.card-header {
+  padding: 1.25rem 1.5rem;
+  background: linear-gradient(to bottom, #fafbfc, #ffffff);
+  border-bottom: 1px solid #eaeef2;
+  font-weight: 600;
+  font-size: 1.125rem;
+  color: #1a2634;
+  letter-spacing: -0.01em;
+}
+
+.card-body {
+  padding: 1.5rem;
+  color: #2d3a4b;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.card-footer {
+  padding: 1rem 1.5rem;
+  background: linear-gradient(to bottom, #ffffff, #f8fafc);
+  border-top: 1px solid #eaeef2;
+  color: #4a5a6e;
+  font-size: 0.9375rem;
+}
+
+/* Optional: Add some variations */
+.card.bordered {
+  border: 2px solid #e2e8f0;
+  box-shadow: none;
+}
+
+.card.bordered:hover {
+  border-color: #cbd5e0;
+  box-shadow: none;
+  transform: none;
+}
+
+/* Dark mode support (optional) */
+@media (prefers-color-scheme: dark) {
+  .card {
+    background: #1e2937;
+    border-color: #2d3a4b;
+  }
+
+  .card-header {
+    background: linear-gradient(to bottom, #253241, #1e2937);
+    border-bottom-color: #2d3a4b;
+    color: #e9edf2;
+  }
+
+  .card-body {
+    color: #cbd5e0;
+  }
+
+  .card-footer {
+    background: linear-gradient(to bottom, #1e2937, #1a2532);
+    border-top-color: #2d3a4b;
+    color: #a0b3c9;
+  }
+}
+
+/* Responsive design */
+@media (max-width: 640px) {
+  .card {
+    border-radius: 8px;
+  }
+
+  .card-header {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+
+  .card-body {
+    padding: 1rem;
+  }
+
+  .card-footer {
+    padding: 0.875rem 1rem;
+  }
+}
+
+
+
+
+/* Confirm Modal Container */
+.confirm-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  max-width: 400px;
+  width: 90%;
+  z-index: 1000;
+  animation: slideUp 0.3s ease-out;
+}
+
+/* Overlay/Backdrop */
+.confirm-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 999;
+  animation: fadeIn 0.2s ease-out;
+}
+
+/* Title Styling */
+.confirm-container h2 {
+  margin: 0 0 1rem 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1a2634;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+}
+
+/* Message Styling */
+.confirm-container p {
+  margin: 0 0 2rem 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #4a5a6e;
+}
+
+/* Actions Container */
+.confirm-container .actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+/* Button Base Styles (for the action buttons) */
+.confirm-container button {
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+}
+
+/* Primary Action Button */
+.confirm-container .primary-action {
+  background: #3b82f6;
+  color: white;
+  box-shadow: 0 2px 4px rgba(59, 130, 246, 0.3);
+}
+
+.confirm-container .primary-action:hover {
+  background: #2563eb;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(59, 130, 246, 0.4);
+}
+
+.confirm-container .primary-action:active {
+  transform: translateY(0);
+}
+
+/* Secondary Action Button */
+.confirm-container .secondary-action {
+  background: #f1f5f9;
+  color: #475569;
+  border: 1px solid #e2e8f0;
+}
+
+.confirm-container .secondary-action:hover {
+  background: #e2e8f0;
+  color: #1e293b;
+}
+
+/* Animations */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -40%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .confirm-container {
+    background: #1e2937;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  }
+
+  .confirm-container h2 {
+    color: #e9edf2;
+  }
+
+  .confirm-container p {
+    color: #cbd5e0;
+  }
+
+  .confirm-overlay {
+    background: rgba(0, 0, 0, 0.7);
+  }
+
+  .confirm-container .secondary-action {
+    background: #2d3a4b;
+    color: #e2e8f0;
+    border-color: #3d4a5b;
+  }
+
+  .confirm-container .secondary-action:hover {
+    background: #3d4a5b;
+    color: #ffffff;
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 640px) {
+  .confirm-container {
+    padding: 1.5rem;
+    width: 95%;
+  }
+
+  .confirm-container h2 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .confirm-container p {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .confirm-container .actions {
+    flex-direction: column-reverse;
+    gap: 0.75rem;
+  }
+
+  .confirm-container button {
+    width: 100%;
+    padding: 0.875rem;
+  }
+}
