@@ -18,7 +18,7 @@ This repository is created to:
 - Avoid unnecessary abstractions and over-engineering
 
 This is not a tutorial repository.  
-This is a **learning-in-public and reference repository**.
+This is a **reference repository**.
 
 ---
 
@@ -38,6 +38,9 @@ This is a **learning-in-public and reference repository**.
 
 - **Container–Presenter Pattern (Smart–Dumb Components)**  
   Separates business logic from UI rendering to keep components clean and easy to maintain.
+- **Slot Pattern**
+  A pattern where a components owns the layout and styling and the consumer fills ***predefined slots**
+  using React Nodes
 
 ---
 
