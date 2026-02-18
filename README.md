@@ -41,6 +41,9 @@ This is a **reference repository**.
 - **Slot Pattern**
   A pattern where a components owns the layout and styling and the consumer fills ***predefined slots**
   using React Nodes
+- **Render Props Pattern**
+  The pattern in which the component receives **render** as a prop and that returns **jsx**.
+
 
 ---
 
