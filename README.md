@@ -43,14 +43,14 @@ This is a **reference repository**.
   using React Nodes
 - **Render Props Pattern**
   The pattern in which the component receives **render** as a prop and that returns **jsx**.
-
+- **Compound Component Pattern**
+  Compound Components pattern let you split a big component into small, name parts so users can compose UI freely without adding new props    every time.
 
 ---
 
 ## Future updates
 
-This repository will be continuously updated as I practice more React patterns, such as:
-- Compound Components
+This repository will be continuously updated as I practice more React patterns, such as: 
 - Custom Hooks patterns
 - Render Props
 - State colocation
