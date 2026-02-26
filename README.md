@@ -37,22 +37,24 @@ This is a **reference repository**.
 ## Current progress
 
 - **Container–Presenter Pattern (Smart–Dumb Components)**  
-  Separates business logic from UI rendering to keep components clean and easy to maintain.
+    Separates business logic from UI rendering to keep components clean and easy to maintain.
 - **Slot Pattern**
-  A pattern where a components owns the layout and styling and the consumer fills ***predefined slots**
-  using React Nodes
+    A pattern where a components owns the layout and styling and the consumer fills ***predefined slots**
+    using React Nodes
 - **Render Props Pattern**
-  The pattern in which the component receives **render** as a prop and that returns **jsx**.
+    The pattern in which the component receives **render** as a prop and that returns **jsx**.
 - **Compound Component Pattern**
-  Compound Components pattern let you split a big component into small, name parts so users can compose UI freely without adding new props    every time.
+    Compound Components pattern let you split a big component into small, name parts so users can compose UI freely without adding new props    every time.
+- **Custom Hook Pattern**
+    A custom hook is a function (starting with `use`) that extracts reusable stateful logic from components.
+
+
 
 ---
 
 ## Future updates
 
 This repository will be continuously updated as I practice more React patterns, such as: 
-- Custom Hooks patterns
-- Render Props
 - State colocation
 - Controlled vs uncontrolled components
 - Feature-based architecture
