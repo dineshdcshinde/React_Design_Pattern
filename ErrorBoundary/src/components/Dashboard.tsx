@@ -1,7 +1,7 @@
 import React from "react";
 import FinancialOverview from "./FinancialOverview";
 import TodaysEarning from "./TodaysEarning";
-import ErrorBoundary from "./ErrorBoundary";
+import ErrorComponent from "./ErrorComponent";
 
 const Dashboard: React.FC = () => {
   return (
@@ -15,9 +15,14 @@ const Dashboard: React.FC = () => {
       </div>
 
       <div className="dashboard-grid">
-        <ErrorBoundary allowRetry >
+        {/* <ErrorBoundary allowRetry >
           <FinancialOverview />
-        </ErrorBoundary>
+        </ErrorBoundary> */}
+        <ErrorComponent allowRetry  Fallback={()=>  <section className="panel earning-panel">
+          Got Error @!!! Solve these 
+        </section>} >
+          <FinancialOverview />
+        </ErrorComponent>
         <TodaysEarning />
       </div>
     </main>

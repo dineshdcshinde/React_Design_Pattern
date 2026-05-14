@@ -2,7 +2,8 @@ import React from "react";
 
 interface ErrorBoundaryProps {
   children: React.ReactNode;
-  allowRetry?:boolean
+  allowRetry?: boolean;
+  Fallback?: React.ComponentType;
 }
 
 interface ErrorBoundaryState {
@@ -31,9 +32,9 @@ export default class ErrorBoundary extends React.Component<
 
   handleRetry() {
     this.setState({
-      hasError:false, 
-      error:null, 
-      retry:1
+      hasError: false,
+      error: null,
+      retry: 1,
     });
   }
 
@@ -42,19 +43,25 @@ export default class ErrorBoundary extends React.Component<
     console.error("errorInfo", errorInfo);
   }
 
-  
-
   render() {
-    const { children, allowRetry} = this.props;
+    const { children, allowRetry, Fallback } = this.props;
+
 
     if (this.state.hasError) {
       return (
         <>
-          Error occurred! Solve this one.
-          {
-            !!allowRetry && 
-          <button onClick={()=>this.handleRetry()}>retry</button>
-          }
+          {Fallback ? (
+            <Fallback />
+          ) : (
+            <span>
+              Error occurred! Solve this one.
+              {this?.state?.error ? this?.state?.error?.message: 'null'}
+            </span>
+          )}
+
+          {!!allowRetry && (
+            <button onClick={() => this.handleRetry()}>retry</button>
+          )}
         </>
       );
     }
